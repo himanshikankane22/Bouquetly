@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-hand: "Caveat", "Comic Sans MS", cursive;
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+
+  --color-cream-50: #fdfaf4;
+  --color-cream-100: #faf3e8;
+  --color-cream-200: #f4e8d8;
+  --color-cream-300: #eadcc5;
+  --color-cream-400: #ddc9ab;
+
+  --color-blush-50: #fdf6f3;
+  --color-blush-100: #fbeae5;
+  --color-blush-200: #f6d8d2;
+  --color-blush-300: #efc3bb;
+  --color-blush-400: #e4a79d;
+  --color-blush-500: #d48c81;
+
+  --color-rose-300: #dba49a;
+  --color-rose-400: #c98678;
+  --color-rose-500: #b46b5c;
+  --color-rose-600: #9c5648;
+  --color-rose-700: #82433a;
+
+  --color-peach-100: #fcead9;
+  --color-peach-200: #f8dbc0;
+  --color-peach-300: #f2c3a0;
+
+  --color-sage-100: #e4e9da;
+  --color-sage-200: #d5ddc9;
+  --color-sage-300: #becbae;
+  --color-sage-400: #a3b48f;
+  --color-sage-500: #879a75;
+  --color-sage-600: #6d805d;
+
+  --color-cocoa-100: #ecdfd3;
+  --color-cocoa-300: #c0a089;
+  --color-cocoa-400: #a5846b;
+  --color-cocoa-500: #8a6a53;
+  --color-cocoa-600: #6f5341;
+  --color-cocoa-700: #584333;
+  --color-cocoa-800: #45332a;
+
+  --color-wine-400: #a05b5b;
+  --color-wine-500: #8a4a4d;
+  --color-wine-600: #72393e;
+
+  --color-gold-300: #e4c391;
+  --color-gold-400: #d9ae77;
+  --color-gold-500: #c7975c;
+
+  --color-plum-50: #f2f0f7;
+  --color-plum-100: #e3e0ee;
+  --color-plum-200: #c0bacf;
+  --color-plum-300: #8f86a5;
+  --color-plum-400: #5d5370;
+  --color-plum-500: #3c3348;
+  --color-plum-600: #2a2434;
+  --color-plum-700: #211b2b;
+  --color-plum-800: #181420;
+  --color-plum-900: #141019;
+  --color-plum-950: #0d0a12;
+
+  --color-crimson-400: #c14b4b;
+  --color-crimson-500: #a83232;
+  --color-crimson-600: #8e2929;
+  --color-crimson-700: #741f1f;
+  --color-crimson-800: #561717;
+
+  --shadow-soft: 0 10px 40px -12px rgb(111 83 65 / 0.25);
+  --shadow-lifted: 0 24px 60px -20px rgb(111 83 65 / 0.35);
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  @apply bg-plum-900 text-plum-100 font-sans antialiased;
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--color-blush-300);
+  color: var(--color-cocoa-800);
+}
+
+/* ---------- paper textures ---------- */
+
+.paper-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.35 0 0 0 0 0.25 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.paper-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 27px,
+    rgb(138 106 83 / 0.12) 27px,
+    rgb(138 106 83 / 0.12) 28px
+  );
+}
+
+.letter-vignette {
+  background:
+    radial-gradient(130% 90% at 50% 0%, transparent 55%, rgb(138 106 83 / 0.08) 100%),
+    var(--color-cream-50);
+}
+
+/* ---------- focus ---------- */
+
+:focus-visible {
+  outline: 2px solid var(--color-rose-400);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

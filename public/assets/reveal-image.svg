@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#241B2E"/>
+      <stop offset="55%" stop-color="#1A1422"/>
+      <stop offset="100%" stop-color="#140F1B"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0%" stop-color="#A84040" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#A84040" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="600" fill="url(#bg)"/>
+  <rect width="900" height="600" fill="url(#glow)"/>
+  <g fill="#E4C391" opacity="0.9">
+    <circle cx="120" cy="110" r="4"/><circle cx="780" cy="90" r="3"/>
+    <circle cx="820" cy="420" r="4"/><circle cx="80" cy="470" r="3"/>
+    <circle cx="430" cy="60" r="3"/>
+  </g>
+  <g transform="translate(450 255)">
+    <path d="M0 62 C -3 52 -34 30 -34 4 C -34 -12 -18 -18 -8 -8 C -4 -4 0 6 0 10 C 0 6 4 -4 8 -8 C 18 -18 34 -12 34 4 C 34 30 3 52 0 62 Z"
+      fill="none" stroke="#C95656" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+  </g>
+  <text x="450" y="430" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="34" fill="#D9C6A7" opacity="0.92">
+    your keepsake goes here ♡
+  </text>
+</svg>
