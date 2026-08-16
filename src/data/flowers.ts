@@ -8,14 +8,14 @@ export interface FlowerInfo {
 }
 
 export const FLOWERS: FlowerInfo[] = [
-  { type: 'rose', name: 'Rose', meaning: 'for love', size: 30 },
-  { type: 'tulip', name: 'Tulip', meaning: 'for joy', size: 26 },
-  { type: 'daisy', name: 'Daisy', meaning: 'for cheer', size: 28 },
-  { type: 'peony', name: 'Peony', meaning: 'for grace', size: 34 },
-  { type: 'sunflower', name: 'Sunflower', meaning: 'for warmth', size: 34 },
-  { type: 'wildflower', name: 'Wildflower', meaning: 'for wonder', size: 24 },
-  { type: 'babysbreath', name: "Baby's Breath", meaning: 'for care', size: 22 },
-  { type: 'lavender', name: 'Lavender', meaning: 'for calm', size: 22 },
+  { type: 'rose', name: 'Rose', meaning: 'for love', size: 48 },
+  { type: 'tulip', name: 'Tulip', meaning: 'for joy', size: 43 },
+  { type: 'daisy', name: 'Daisy', meaning: 'for cheer', size: 45 },
+  { type: 'peony', name: 'Peony', meaning: 'for grace', size: 54 },
+  { type: 'sunflower', name: 'Sunflower', meaning: 'for warmth', size: 54 },
+  { type: 'wildflower', name: 'Wildflower', meaning: 'for wonder', size: 40 },
+  { type: 'babysbreath', name: "Baby's Breath", meaning: 'for care', size: 34 },
+  { type: 'lavender', name: 'Lavender', meaning: 'for calm', size: 34 },
 ]
 
 export function totalStems(flowers: FlowerSelection[]): number {

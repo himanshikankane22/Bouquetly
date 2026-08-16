@@ -48,7 +48,7 @@ export default function BouquetSVG({
         {GREENERY.map(([side, mag], i) => (
           <g key={i} transform={`translate(${200 + side * 40} ${492 + mag * 10}) rotate(${side * 40 * mag + 8})`}>
             <path
-              d="M0 0 C -19 -14 -27 -31 -19 -44 C -8 -35 4 -18 0 0 Z"
+              d="M0 0 C -24 -18 -34 -38 -24 -55 C -10 -44 5 -22 0 0 Z"
               fill={i % 2 === 0 ? '#93AB78' : '#A3B98B'}
             />
           </g>

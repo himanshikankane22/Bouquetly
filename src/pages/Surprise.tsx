@@ -32,6 +32,7 @@ export default function Surprise() {
         style={{ background: 'linear-gradient(160deg, #1E1826 0%, #16121C 55%, #120F1A 100%)' }}
       >
         <FloatingPetals count={10} sparkles />
+        <div aria-hidden="true" className="night-vignette pointer-events-none absolute inset-0" />
         <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
@@ -39,7 +40,7 @@ export default function Surprise() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="flex flex-col items-center"
           >
-            <span className="flex size-20 items-center justify-center rounded-full bg-crimson-600/40 shadow-soft">
+            <span className="flex size-20 items-center justify-center rounded-full bg-crimson-600/30 ring-1 ring-crimson-400/40 shadow-soft">
               <Heart className="h-9 w-9 text-crimson-400" aria-hidden="true" />
             </span>
             <h1 className="mt-7 font-display text-3xl text-cream-50 sm:text-4xl">
@@ -53,11 +54,11 @@ export default function Surprise() {
             </p>
             <Link
               to="/create"
-              className="mt-8 rounded-full bg-rose-400 px-8 py-4 font-bold text-white shadow-soft transition-all hover:-translate-y-0.5 hover:bg-rose-500 hover:shadow-lifted"
+              className="press mt-8 rounded-full bg-gold-400 px-8 py-4 font-bold text-plum-950 shadow-glow-gold transition-colors hover:bg-gold-300"
             >
               Create Your Own
             </Link>
-            <p className="mt-6 font-hand text-2xl text-plum-300">made just for you ♡</p>
+            <p className="mt-6 font-hand text-2xl tracking-wide text-gold-300">made just for you ♡</p>
           </motion.div>
         </div>
       </div>
@@ -82,11 +83,11 @@ export default function Surprise() {
       )}
       <Link
         to="/create"
-        className="fixed bottom-4 right-4 z-30 flex size-11 items-center justify-center rounded-full border border-cream-300/70 bg-white/80 shadow-soft backdrop-blur transition hover:bg-white"
+        className="glass-chrome fixed bottom-4 right-4 z-30 flex size-11 items-center justify-center rounded-full shadow-lifted transition hover:bg-white/10"
         aria-label="Create your own surprise"
         title="Create your own surprise"
       >
-        <PenTool className="h-4 w-4 text-cocoa-600" aria-hidden="true" />
+        <PenTool className="h-4 w-4 text-gold-300" aria-hidden="true" />
       </Link>
     </>
   )

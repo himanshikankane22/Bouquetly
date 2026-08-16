@@ -12,14 +12,14 @@ interface MessageEditorProps {
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
     <label className="block">
-      <span className="font-display text-base text-cocoa-600">{label}</span>
+      <span className="font-display text-base text-cream-50">{label}</span>
       <div className="mt-1.5">{children}</div>
     </label>
   )
 }
 
 const inputClasses =
-  'w-full rounded-xl border border-cream-300 bg-white/80 px-4 py-3 text-cocoa-700 placeholder:text-cocoa-300 focus:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-300/60'
+  'w-full rounded-xl border border-white/10 bg-plum-900/60 px-4 py-3 text-cream-50 placeholder:text-plum-300 focus:border-gold-400 focus:outline-none focus:ring-2 focus:ring-gold-400/40'
 
 function readImageAsDataUrl(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -85,7 +85,7 @@ export default function MessageEditor({ config, onChange }: MessageEditorProps) 
   }
 
   return (
-    <div className="space-y-5 rounded-3xl border border-cream-300/70 bg-white/70 p-6 shadow-soft backdrop-blur">
+    <div className="glass-chrome space-y-5 rounded-3xl p-6 shadow-lifted">
       <Field label="To:">
         <input
           type="text"
@@ -105,7 +105,7 @@ export default function MessageEditor({ config, onChange }: MessageEditorProps) 
             placeholder="Just wanted to remind you that you're someone very special."
             className={`${inputClasses} resize-none pb-9`}
           />
-          <span className="pointer-events-none absolute bottom-2.5 right-3.5 text-xs font-semibold text-cocoa-300">
+          <span className="pointer-events-none absolute bottom-2.5 right-3.5 text-xs font-semibold text-plum-300">
             {config.message.length} / {MAX_MESSAGE_LENGTH}
           </span>
         </div>
@@ -119,10 +119,10 @@ export default function MessageEditor({ config, onChange }: MessageEditorProps) 
           className={inputClasses}
         />
       </Field>
-      <div className="flex items-center justify-between gap-4 rounded-2xl border border-cream-300/70 bg-white/70 px-4 py-3.5">
+      <div className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-plum-900/50 px-4 py-3.5">
         <div>
-          <p className="font-display text-base text-cocoa-600">Include the keepsake photo</p>
-          <p className="mt-0.5 text-xs text-cocoa-400">A little polaroid tucked inside the card</p>
+          <p className="font-display text-base text-cream-50">Include the keepsake photo</p>
+          <p className="mt-0.5 text-xs text-plum-300">A little polaroid tucked inside the card</p>
         </div>
         <button
           type="button"
@@ -130,7 +130,7 @@ export default function MessageEditor({ config, onChange }: MessageEditorProps) 
           aria-checked={config.includeImage}
           onClick={() => onChange({ includeImage: !config.includeImage })}
           className={`relative inline-flex h-7 w-12 shrink-0 items-center rounded-full transition-colors duration-300 ${
-            config.includeImage ? 'bg-rose-400' : 'bg-cream-300'
+            config.includeImage ? 'bg-gold-400' : 'bg-white/20'
           }`}
         >
           <motion.span
@@ -143,7 +143,7 @@ export default function MessageEditor({ config, onChange }: MessageEditorProps) 
         </button>
       </div>
       {config.includeImage && (
-        <div className="rounded-2xl border border-dashed border-cream-300 bg-white/60 px-4 py-4">
+        <div className="rounded-2xl border border-dashed border-white/15 bg-plum-900/40 px-4 py-4">
           <input
             ref={fileRef}
             type="file"
@@ -162,12 +162,12 @@ export default function MessageEditor({ config, onChange }: MessageEditorProps) 
                 className="h-16 w-16 shrink-0 rounded-lg object-cover shadow-sm"
               />
               <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-semibold text-cocoa-700">Your photo is tucked in</p>
+                <p className="truncate text-sm font-semibold text-cream-50">Your photo is tucked in</p>
                 <div className="mt-2 flex gap-3">
                   <button
                     type="button"
                     onClick={() => fileRef.current?.click()}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-500 hover:text-rose-600"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-gold-300 hover:text-gold-200"
                   >
                     <RefreshCw className="h-3.5 w-3.5" aria-hidden="true" />
                     Replace photo
@@ -175,7 +175,7 @@ export default function MessageEditor({ config, onChange }: MessageEditorProps) 
                   <button
                     type="button"
                     onClick={() => onChange({ image: '' })}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-cocoa-400 hover:text-cocoa-600"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-plum-200 hover:text-cream-100"
                   >
                     <X className="h-3.5 w-3.5" aria-hidden="true" />
                     Remove
@@ -188,16 +188,16 @@ export default function MessageEditor({ config, onChange }: MessageEditorProps) 
               type="button"
               onClick={() => fileRef.current?.click()}
               disabled={uploading}
-              className="flex w-full flex-col items-center gap-2 rounded-xl border border-transparent py-3 text-cocoa-500 transition hover:border-rose-300/70 hover:bg-rose-50/60 hover:text-rose-500 disabled:opacity-60"
+              className="flex w-full flex-col items-center gap-2 rounded-xl border border-transparent py-3 text-plum-200 transition hover:border-gold-400/50 hover:bg-plum-800/50 hover:text-gold-300 disabled:opacity-60"
             >
               <ImagePlus className="h-6 w-6" aria-hidden="true" />
               <span className="text-sm font-semibold">
                 {uploading ? 'Tucking your photo in…' : 'Add a photo'}
               </span>
-              <span className="text-xs text-cocoa-400">JPG or PNG — it will be tucked in nicely</span>
+              <span className="text-xs text-plum-300">JPG or PNG — it will be tucked in nicely</span>
             </button>
           )}
-          {error && <p className="mt-2 text-xs font-semibold text-rose-500">{error}</p>}
+          {error && <p className="mt-2 text-xs font-semibold text-gold-300">{error}</p>}
         </div>
       )}
     </div>

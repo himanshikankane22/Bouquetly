@@ -3,7 +3,7 @@ import type { SurpriseConfig } from '../../types'
 
 export default function CardPreview({ config }: { config: SurpriseConfig }) {
   return (
-    <div className="paper-lines mx-auto w-full max-w-sm rotate-[-0.5deg] rounded-2xl bg-cream-50/95 p-8 shadow-soft">
+    <div className="paper-lines mx-auto w-full max-w-sm rotate-[-0.5deg] rounded-2xl bg-cream-50/95 p-8 shadow-lifted">
       {config.includeImage &&
         (config.image.startsWith('data:') ? (
           <div className="mb-7 flex items-center justify-center rounded-lg border-[6px] border-white bg-cream-100 p-1 shadow-sm">

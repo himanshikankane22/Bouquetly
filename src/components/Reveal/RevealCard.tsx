@@ -133,12 +133,12 @@ export default function RevealCard({ config, stage, reduced = false }: RevealCar
       {/* signature badge */}
       <div className="relative z-10 mt-6 flex justify-center">
         <motion.p
-          className="inline-flex items-center gap-2 rounded-full bg-blush-100 px-5 py-2 font-hand text-2xl text-rose-500"
+          className="inline-flex items-center gap-2 rounded-full bg-cream-100 px-5 py-2 font-hand text-2xl text-cocoa-700 ring-1 ring-gold-400/40"
           initial={false}
           animate={showBadge ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.7 }}
           transition={{ type: 'spring', stiffness: 160, damping: 13 }}
         >
-          <Heart className="h-4 w-4 fill-rose-400 text-rose-400" aria-hidden="true" />
+          <Heart className="h-4 w-4 fill-gold-400 text-gold-400" aria-hidden="true" />
           Made just for you ♡
         </motion.p>
       </div>

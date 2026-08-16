@@ -31,14 +31,14 @@ export const TIE_Y = 512
 export const RIM_Y = 468
 
 const STEM_LEN: Record<FlowerType, number> = {
-  peony: 306,
-  sunflower: 296,
-  rose: 284,
-  tulip: 252,
-  daisy: 244,
-  wildflower: 238,
-  babysbreath: 208,
-  lavender: 186,
+  peony: 330,
+  sunflower: 322,
+  rose: 310,
+  tulip: 278,
+  daisy: 270,
+  wildflower: 264,
+  babysbreath: 236,
+  lavender: 214,
 }
 
 export function hashSeed(s: string): number {
@@ -92,7 +92,7 @@ export function buildBouquet(flowers: FlowerSelection[], arrangement: Arrangemen
     const outMax = Math.max(1, Math.floor(n / 2))
     const step = maxAngle / outMax
     const angle = out * step + (rand() - 0.5) * step * 0.8
-    const len = item.len * (0.94 + rand() * 0.1)
+    const len = item.len * (0.92 + rand() * 0.18)
     const rad = (angle * Math.PI) / 180
     return {
       id: `${item.idx}-${item.type}`,
@@ -101,28 +101,28 @@ export function buildBouquet(flowers: FlowerSelection[], arrangement: Arrangemen
         x: TIE_X + Math.sin(rad) * len,
         y: TIE_Y - Math.cos(rad) * len,
       },
-      base: { x: TIE_X + (rand() - 0.5) * 14, y: TIE_Y + (rand() - 0.5) * 8 },
-      rotation: -angle * 0.32 + (rand() - 0.5) * 4,
-      size: flowerInfo(item.type).size * (0.92 + rand() * 0.16),
-      stemCurve: (angle === 0 ? (rand() > 0.5 ? 1 : -1) : -Math.sign(angle)) * (12 + rand() * 16),
+      base: { x: TIE_X + (rand() - 0.5) * 12, y: TIE_Y + (rand() - 0.5) * 6 },
+      rotation: -angle * 0.45 + (rand() - 0.5) * 6,
+      size: flowerInfo(item.type).size * (0.85 + rand() * 0.25),
+      stemCurve: (angle === 0 ? (rand() > 0.5 ? 1 : -1) : -Math.sign(angle)) * (10 + rand() * 20),
       front: false,
     }
   })
 
-  const frontCount = n < 4 ? 0 : Math.min(3, Math.max(1, Math.round(n * 0.16)))
+  const frontCount = n < 4 ? 0 : Math.min(3, Math.max(1, Math.round(n * 0.2)))
   for (let k = 0; k < frontCount; k++) {
     const s = specs[n - 1 - k]
     s.front = true
     const side = rand() > 0.5 ? 1 : -1
-    const spread = 18 + rand() * 34
+    const spread = 20 + rand() * 40
     s.anchor = {
       x: TIE_X + side * spread,
       y: RIM_Y - 14 - rand() * 16,
     }
     s.base = { x: TIE_X + side * (spread * 0.35), y: TIE_Y - 8 + rand() * 12 }
-    s.rotation = (rand() - 0.5) * 16
+    s.rotation = (rand() - 0.5) * 20
     s.stemCurve = side * (10 + rand() * 14)
-    s.size = flowerInfo(s.type).size * (0.8 + rand() * 0.12)
+    s.size = flowerInfo(s.type).size * (0.8 + rand() * 0.15)
   }
 
   return specs

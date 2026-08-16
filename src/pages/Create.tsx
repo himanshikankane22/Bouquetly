@@ -28,13 +28,14 @@ export default function Create() {
       style={{ backgroundImage: background.gradient }}
     >
       <FloatingPetals count={10} />
+      <div className="night-vignette pointer-events-none absolute inset-0" aria-hidden="true" />
       <div className="relative z-10 mx-auto max-w-5xl px-4 pb-36 pt-6 sm:px-6">
         <header className="flex justify-center lg:justify-start">
           <Link
             to="/"
-            className="inline-flex items-center gap-3 font-display text-2xl text-plum-100 transition hover:text-rose-300"
+            className="inline-flex items-center gap-3 font-display text-2xl text-cream-50 transition hover:text-gold-300"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-rose-400 text-white shadow-soft">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-400 text-plum-950 shadow-glow-gold">
               <Heart size={20} fill="currentColor" />
             </span>
             A Little Something For You
@@ -78,16 +79,16 @@ export default function Create() {
                 {step === 3 && (
                   <div className="mx-auto max-w-xl pt-4 text-center">
                     <CardPreview config={draft} />
-                    <p className="mt-9 font-hand text-3xl text-blush-200">
+                    <p className="mt-9 font-hand text-3xl tracking-wide text-gold-300">
                       Almost there — the fun part is next.
                     </p>
                     <Link
                       to="/preview"
-                      className="mt-6 inline-block rounded-full bg-rose-400 px-8 py-4 font-semibold text-white shadow-soft transition hover:bg-rose-500 hover:shadow-lifted"
+                      className="press mt-6 inline-block rounded-full bg-gold-400 px-8 py-4 font-bold text-plum-950 shadow-glow-gold transition-colors hover:bg-gold-300"
                     >
                       Open the surprise preview
                     </Link>
-                    <p className="mx-auto mt-4 max-w-sm text-sm text-plum-300">
+                    <p className="mx-auto mt-4 max-w-sm text-sm text-plum-200">
                       The preview replays the full envelope reveal — petals, pops of color, and your letter.
                     </p>
                   </div>
@@ -104,12 +105,12 @@ export default function Create() {
 
       {step < 3 && (
         <div className="fixed inset-x-0 bottom-0 z-20 px-4 pb-4">
-          <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-2xl border border-cream-300/70 bg-cream-50/85 px-4 py-3 shadow-soft backdrop-blur">
+          <div className="glass-chrome mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-2xl px-4 py-3 shadow-lifted">
             <button
               type="button"
               onClick={() => setStep((s) => Math.max(0, s - 1))}
               disabled={step === 0}
-              className="inline-flex items-center gap-2 rounded-full border border-cream-300 bg-white/80 px-5 py-2.5 font-semibold text-cocoa-600 transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+              className="press inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 font-semibold text-cream-50 transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-40"
             >
               <ArrowLeft size={18} />
               Back
@@ -117,7 +118,7 @@ export default function Create() {
             <button
               type="button"
               onClick={resetDraft}
-              className="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-semibold text-cocoa-400 transition hover:text-rose-500"
+              className="press inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-semibold text-plum-200 transition hover:text-gold-300"
             >
               <RotateCcw size={15} />
               Start over
@@ -126,7 +127,7 @@ export default function Create() {
               type="button"
               onClick={() => setStep((s) => Math.min(3, s + 1))}
               disabled={step === 0 && emptyBouquet}
-              className="inline-flex items-center gap-2 rounded-full bg-rose-400 px-6 py-2.5 font-semibold text-white shadow-soft transition hover:bg-rose-500 disabled:cursor-not-allowed disabled:opacity-40"
+              className="press inline-flex items-center gap-2 rounded-full bg-gold-400 px-6 py-2.5 font-bold text-plum-950 shadow-glow-gold transition hover:bg-gold-300 disabled:cursor-not-allowed disabled:opacity-40"
             >
               Next
               <ArrowRight size={18} />

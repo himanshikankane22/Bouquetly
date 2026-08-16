@@ -1,76 +1,91 @@
 @import "tailwindcss";
 
 @theme {
+  /* ---------- typography ---------- */
   --font-display: "Fraunces", "Georgia", serif;
   --font-hand: "Caveat", "Comic Sans MS", cursive;
   --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
 
-  --color-cream-50: #fdfaf4;
-  --color-cream-100: #faf3e8;
-  --color-cream-200: #f4e8d8;
-  --color-cream-300: #eadcc5;
-  --color-cream-400: #ddc9ab;
+  /* ---------- cream / paper ---------- */
+  --color-cream-50: #fdfaf3;
+  --color-cream-100: #faf3e6;
+  --color-cream-200: #f4e7d4;
+  --color-cream-300: #ead9bd;
+  --color-cream-400: #dcc6a1;
 
-  --color-blush-50: #fdf6f3;
-  --color-blush-100: #fbeae5;
-  --color-blush-200: #f6d8d2;
-  --color-blush-300: #efc3bb;
-  --color-blush-400: #e4a79d;
-  --color-blush-500: #d48c81;
+  /* ---------- blush ---------- */
+  --color-blush-50: #fdf6f2;
+  --color-blush-100: #fbeae4;
+  --color-blush-200: #f6d6cf;
+  --color-blush-300: #eec0b7;
+  --color-blush-400: #e2a196;
+  --color-blush-500: #d0847a;
 
+  /* ---------- rose (interactive accent) ---------- */
   --color-rose-300: #dba49a;
-  --color-rose-400: #c98678;
-  --color-rose-500: #b46b5c;
-  --color-rose-600: #9c5648;
-  --color-rose-700: #82433a;
+  --color-rose-400: #c98375;
+  --color-rose-500: #b56b5d;
+  --color-rose-600: #9c5649;
+  --color-rose-700: #824238;
 
-  --color-peach-100: #fcead9;
-  --color-peach-200: #f8dbc0;
-  --color-peach-300: #f2c3a0;
+  /* ---------- peach ---------- */
+  --color-peach-100: #fce9d6;
+  --color-peach-200: #f8dabb;
+  --color-peach-300: #f2c29c;
 
-  --color-sage-100: #e4e9da;
-  --color-sage-200: #d5ddc9;
-  --color-sage-300: #becbae;
-  --color-sage-400: #a3b48f;
-  --color-sage-500: #879a75;
-  --color-sage-600: #6d805d;
+  /* ---------- sage (status/success) ---------- */
+  --color-sage-100: #e3e8d9;
+  --color-sage-200: #d4dcc8;
+  --color-sage-300: #bdcbaa;
+  --color-sage-400: #a2b48c;
+  --color-sage-500: #879a71;
+  --color-sage-600: #6d805a;
 
-  --color-cocoa-100: #ecdfd3;
-  --color-cocoa-300: #c0a089;
-  --color-cocoa-400: #a5846b;
-  --color-cocoa-500: #8a6a53;
-  --color-cocoa-600: #6f5341;
-  --color-cocoa-700: #584333;
-  --color-cocoa-800: #45332a;
+  /* ---------- cocoa (warm neutral text on paper) ---------- */
+  --color-cocoa-100: #ecdfd1;
+  --color-cocoa-300: #bf9f86;
+  --color-cocoa-400: #a48369;
+  --color-cocoa-500: #89694f;
+  --color-cocoa-600: #6e5140;
+  --color-cocoa-700: #58412f;
+  --color-cocoa-800: #453128;
 
+  /* ---------- wine ---------- */
   --color-wine-400: #a05b5b;
   --color-wine-500: #8a4a4d;
   --color-wine-600: #72393e;
 
-  --color-gold-300: #e4c391;
-  --color-gold-400: #d9ae77;
-  --color-gold-500: #c7975c;
+  /* ---------- gold (luxury focal accent) ---------- */
+  --color-gold-200: #f0dcb2;
+  --color-gold-300: #e6c68e;
+  --color-gold-400: #d9ab6e;
+  --color-gold-500: #c79357;
+  --color-gold-600: #a9783f;
 
+  /* ---------- plum (night base) ---------- */
   --color-plum-50: #f2f0f7;
-  --color-plum-100: #e3e0ee;
-  --color-plum-200: #c0bacf;
-  --color-plum-300: #8f86a5;
-  --color-plum-400: #5d5370;
-  --color-plum-500: #3c3348;
-  --color-plum-600: #2a2434;
-  --color-plum-700: #211b2b;
-  --color-plum-800: #181420;
-  --color-plum-900: #141019;
-  --color-plum-950: #0d0a12;
+  --color-plum-100: #e5e2ef;
+  --color-plum-200: #c2bcd2;
+  --color-plum-300: #9188a9;
+  --color-plum-400: #5d5372;
+  --color-plum-500: #3c324a;
+  --color-plum-600: #2a2237;
+  --color-plum-700: #211a2d;
+  --color-plum-800: #181221;
+  --color-plum-900: #13101b;
+  --color-plum-950: #0d0a13;
 
-  --color-crimson-400: #c14b4b;
+  /* ---------- crimson (wax seal / deep red) ---------- */
+  --color-crimson-400: #c25050;
   --color-crimson-500: #a83232;
   --color-crimson-600: #8e2929;
-  --color-crimson-700: #741f1f;
-  --color-crimson-800: #561717;
+  --color-crimson-700: #74201f;
+  --color-crimson-800: #551717;
 
-  --shadow-soft: 0 10px 40px -12px rgb(111 83 65 / 0.25);
-  --shadow-lifted: 0 24px 60px -20px rgb(111 83 65 / 0.35);
+  /* ---------- elevation shadows ---------- */
+  --shadow-soft: 0 1px 2px rgb(17 12 26 / 0.12), 0 8px 24px -12px rgb(17 12 26 / 0.5);
+  --shadow-lifted: 0 2px 4px rgb(17 12 26 / 0.1), 0 20px 50px -20px rgb(17 12 26 / 0.65);
+  --shadow-glow-gold: 0 0 0 1px rgb(217 171 110 / 0.25), 0 12px 40px -12px rgb(199 147 87 / 0.45);
 }
 
 html,
@@ -79,17 +94,71 @@ body {
 }
 
 body {
-  @apply bg-plum-900 text-plum-100 font-sans antialiased;
+  @apply bg-plum-950 text-plum-100 font-sans antialiased;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: var(--color-blush-300);
+  background: var(--color-gold-300);
   color: var(--color-cocoa-800);
 }
 
-/* ---------- paper textures ---------- */
+/* ---------- focus ---------- */
+:focus-visible {
+  outline: 2px solid var(--color-gold-400);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
 
+/* ================= atmosphere & materials ================= */
+
+/* cinematic night base — layered mesh + vignette */
+.night-mesh {
+  background:
+    radial-gradient(90% 70% at 12% 0%, rgb(140 90 130 / 0.22) 0%, transparent 58%),
+    radial-gradient(80% 60% at 90% 12%, rgb(199 147 87 / 0.12) 0%, transparent 55%),
+    radial-gradient(120% 90% at 50% 110%, rgb(90 50 120 / 0.28) 0%, transparent 60%),
+    linear-gradient(180deg, var(--color-plum-800) 0%, var(--color-plum-950) 100%);
+}
+
+.night-vignette {
+  background: radial-gradient(120% 90% at 50% 0%, transparent 52%, rgb(4 2 8 / 0.55) 100%);
+}
+
+/* frosted translucent chrome (Apple material) */
+.glass-chrome {
+  background: rgb(24 18 33 / 0.55);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgb(255 255 255 / 0.09);
+}
+
+.glass-light {
+  background: rgb(253 250 243 / 0.78);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid rgb(120 100 80 / 0.12);
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .glass-chrome {
+    background: rgb(24 18 33 / 0.94);
+  }
+  .glass-light {
+    background: rgb(253 250 243 / 0.96);
+  }
+}
+
+/* hairline gradient top-edge highlight for dark surfaces */
+.edge-top {
+  box-shadow:
+    inset 0 1px 0 0 rgb(255 255 255 / 0.1),
+    0 20px 50px -24px rgb(17 12 26 / 0.7);
+}
+
+/* ---------- paper textures ---------- */
 .paper-grain {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.35 0 0 0 0 0.25 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -110,16 +179,15 @@ body {
     var(--color-cream-50);
 }
 
-/* ---------- focus ---------- */
-
-:focus-visible {
-  outline: 2px solid var(--color-rose-400);
-  outline-offset: 3px;
-  border-radius: 6px;
+/* ---------- tactile press ---------- */
+.press {
+  transition: transform 160ms ease-out;
+}
+.press:active {
+  transform: scale(0.96);
 }
 
 /* ---------- reduced motion ---------- */
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -127,5 +195,8 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  .press:active {
+    transform: none !important;
   }
 }

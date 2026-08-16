@@ -56,17 +56,17 @@ export default function FlowerSelector({ flowers, onChange }: FlowerSelectorProp
               }}
               className={`flex cursor-pointer select-none flex-col items-center gap-1 rounded-2xl border p-4 text-center transition-all duration-200 ${
                 selected
-                  ? 'scale-[1.03] border-rose-300 bg-blush-50/80 ring-2 ring-rose-400'
-                  : 'border-cream-300 bg-white/70 hover:-translate-y-0.5 hover:shadow-soft'
+                  ? 'scale-[1.03] border-gold-400/70 bg-plum-700/80 ring-2 ring-gold-400/60'
+                  : 'edge-top border border-white/5 bg-plum-800/60 hover:-translate-y-0.5 hover:bg-plum-700/70'
               }`}
             >
               <FlowerSVG type={f.type} width={60} />
-              <p className="font-display text-base text-cocoa-700">{f.name}</p>
-              <p className="text-xs italic text-cocoa-300">{f.meaning}</p>
+              <p className="font-display text-base text-cream-50">{f.name}</p>
+              <p className="text-xs italic text-gold-300/80">{f.meaning}</p>
               {selected && (
                 <div
                   onClick={(e) => e.stopPropagation()}
-                  className="mt-1.5 flex items-center gap-2 rounded-full border border-cream-300/70 bg-white/90 px-1.5 py-1 shadow-soft"
+                  className="mt-1.5 flex items-center gap-2 rounded-full border border-white/10 bg-plum-900/80 px-1.5 py-1 shadow-soft"
                 >
                   <button
                     type="button"
@@ -75,11 +75,11 @@ export default function FlowerSelector({ flowers, onChange }: FlowerSelectorProp
                       e.stopPropagation()
                       adjust(f.type, -1)
                     }}
-                    className="flex h-6 w-6 items-center justify-center rounded-full bg-cream-100 text-cocoa-600 transition hover:bg-cream-300"
+                    className="flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-cream-100 transition hover:bg-white/20"
                   >
                     <Minus size={14} strokeWidth={2.5} />
                   </button>
-                  <span className="min-w-5 text-center text-sm font-bold text-cocoa-700">{count}</span>
+                  <span className="min-w-5 text-center text-sm font-bold text-cream-50">{count}</span>
                   <button
                     type="button"
                     aria-label={`Add one ${f.name}`}
@@ -88,7 +88,7 @@ export default function FlowerSelector({ flowers, onChange }: FlowerSelectorProp
                       e.stopPropagation()
                       adjust(f.type, 1)
                     }}
-                    className="flex h-6 w-6 items-center justify-center rounded-full bg-blush-100 text-rose-500 transition hover:bg-blush-200 disabled:cursor-not-allowed disabled:opacity-40"
+                    className="flex h-6 w-6 items-center justify-center rounded-full bg-gold-400/90 text-plum-950 transition hover:bg-gold-300 disabled:cursor-not-allowed disabled:opacity-40"
                   >
                     <Plus size={14} strokeWidth={2.5} />
                   </button>
@@ -100,7 +100,6 @@ export default function FlowerSelector({ flowers, onChange }: FlowerSelectorProp
       </div>
       <p className="mt-5 text-center text-sm font-semibold text-plum-200">
         {total} {total === 1 ? 'flower' : 'flowers'} in your bouquet
-      </p>
-    </div>
+      </p>    </div>
   )
 }

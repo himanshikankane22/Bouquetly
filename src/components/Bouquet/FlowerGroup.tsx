@@ -20,20 +20,28 @@ export default function FlowerGroup({ spec, index, bloomed = true }: FlowerGroup
   const reduced = useReducedMotion()
   const dx = spec.anchor.x - spec.base.x
   const dy = spec.anchor.y - spec.base.y
-  const len = Math.hypot(dx, dy) || 1
-  const px = -dy / len
-  const py = dx / len
-  const midX = dx / 2
-  const midY = dy / 2
-  const d = `M 0 0 Q ${midX + px * spec.stemCurve} ${midY + py * spec.stemCurve} ${dx} ${dy}`
+  const stemLen = Math.hypot(dx, dy)
+  // Curved stem path using stemCurve for natural arch
+  const stemControlX = spec.stemCurve * -dy / stemLen
+  const stemControlY = spec.stemCurve * dx / stemLen
+  const stemPath = `
+    M${spec.base.x} ${spec.base.y}
+    Q${spec.base.x + stemControlX} ${spec.base.y + stemControlY}
+    ${spec.anchor.x} ${spec.anchor.y}
+  `
 
   const rand = mulberry32(hashSeed(spec.id))
-  const leaves: Leaf[] = [0.4, 0.56, 0.7].map((t) => ({
-    t,
-    flip: rand() > 0.5 ? 1 : -1,
-    scale: 0.75 + rand() * 0.5,
-    rot: (rand() - 0.5) * 24,
-  }))
+  // Vary leaf count slightly (2–3 leaves) and give each leaf individual traits
+  const leafCount = 2 + Math.floor(rand() * 2)
+  const leaves: Leaf[] = []
+  for (let i = 0; i < leafCount; i++) {
+    leaves.push({
+      t: [0.3, 0.55, 0.8][i] || 0.5,
+      flip: rand() > 0.5 ? 1 : -1,
+      scale: 0.7 + rand() * 0.4,
+      rot: (rand() - 0.5) * (20 - i * 4), // decreasing rotation spread
+    })
+  }
 
   const bezierAt = (t: number) => ({
     x: 2 * (1 - t) * t * (midX + px * spec.stemCurve) + t * t * dx,
@@ -71,8 +79,12 @@ export default function FlowerGroup({ spec, index, bloomed = true }: FlowerGroup
               animate={reduced || bloomed ? undefined : { opacity: 1 }}
               transition={{ duration: 0.4, delay: growDelay + 0.15 + i * 0.06 }}
             >
-              <ellipse rx="9" ry="3.6" fill="#9DB58C" />
-              <path d="M-8 0 Q 0 1.6 8 0" stroke="#87A177" strokeWidth="0.9" fill="none" />
+              {/* Leaf with subtle midrib and two-tone shading */}
+              <ellipse rx="14" ry="6" fill="#9DB58C" />
+              <g stroke="#87A177" strokeWidth="1.2" fill="none">
+                <path d="M-12 0 Q 0 2.5 12 0" />
+                <path d="M-11 0 Q 0 1.5 11 0" strokeOpacity={0.6} />
+              </g>
             </motion.g>
           )
         })}

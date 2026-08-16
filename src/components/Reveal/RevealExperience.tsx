@@ -142,11 +142,11 @@ export default function RevealExperience({
                       exit={{ opacity: 0, y: -8 }}
                       transition={{ duration: 0.5, ease: 'easeOut' }}
                     >
-                      <p className="font-display text-xl text-plum-100 sm:text-2xl">
+                      <p className="font-display text-xl text-cream-50 sm:text-2xl">
                         You&apos;ve got a little something 💌
                       </p>
                       <motion.p
-                        className="mt-2 font-hand text-2xl text-blush-300"
+                        className="mt-2 font-hand text-2xl tracking-wide text-gold-300"
                         animate={{ opacity: [0.55, 1, 0.55] }}
                         transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
                       >
@@ -156,7 +156,7 @@ export default function RevealExperience({
                   ) : (
                     <motion.p
                       key="patience"
-                      className="font-hand text-2xl text-plum-200"
+                      className="font-hand text-2xl tracking-wide text-plum-200"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
@@ -185,13 +185,13 @@ export default function RevealExperience({
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ delay: 0.5, duration: 0.55, ease: 'easeOut' }}
                 >
-                  <p className="font-hand text-2xl text-cocoa-500">
+                  <p className="font-hand text-2xl tracking-wide text-gold-300">
                     Ready to send this little something?
                   </p>
                   <button
                     type="button"
                     onClick={onGenerate}
-                    className="mt-4 rounded-full bg-rose-400 px-9 py-4 text-base font-bold text-white shadow-soft transition-all hover:-translate-y-0.5 hover:bg-rose-500 hover:shadow-lifted"
+                    className="press mt-4 rounded-full bg-gold-400 px-9 py-4 text-base font-bold text-plum-950 shadow-glow-gold transition-colors hover:bg-gold-300"
                   >
                     Generate My Surprise
                     <Sparkles className="ml-2 inline h-4 w-4" aria-hidden="true" />
@@ -208,9 +208,9 @@ export default function RevealExperience({
           type="button"
           onClick={replay}
           aria-label="Replay the surprise"
-          className="fixed right-4 top-4 z-20 flex size-11 items-center justify-center rounded-full border border-cream-300/70 bg-white/80 shadow-soft backdrop-blur transition hover:bg-white"
+          className="glass-chrome fixed right-4 top-4 z-20 flex size-11 items-center justify-center rounded-full shadow-lifted transition hover:bg-white/10"
         >
-          <RotateCcw className="h-4 w-4 text-cocoa-600" aria-hidden="true" />
+          <RotateCcw className="h-4 w-4 text-gold-300" aria-hidden="true" />
         </button>
       )}
     </div>

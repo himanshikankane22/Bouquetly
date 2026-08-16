@@ -23,10 +23,10 @@ export default function BouquetPreview({ config }: { config: SurpriseConfig }) {
           className={`w-44 h-auto drop-shadow-xl sm:w-48 lg:w-64 ${empty ? 'opacity-55' : ''}`}
         />
         {empty && (
-          <p className="text-center font-hand text-xl text-blush-200">Pick some flowers to see them bloom</p>
+          <p className="text-center font-hand text-xl text-gold-300">Pick some flowers to see them bloom</p>
         )}
       </div>
-      <p className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap font-hand text-base text-plum-200/90">
+      <p className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap font-hand text-base text-cream-100/90">
         your bouquet, so far
       </p>
     </div>

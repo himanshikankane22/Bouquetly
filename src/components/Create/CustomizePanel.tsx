@@ -10,7 +10,7 @@ interface CustomizePanelProps {
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <div>
-      <h3 className="font-display text-lg text-cocoa-600">{title}</h3>
+      <h3 className="font-display text-lg text-cream-50">{title}</h3>
       <div className="mt-2.5 flex flex-wrap gap-2">{children}</div>
     </div>
   )
@@ -32,18 +32,21 @@ function SwatchOption({
       type="button"
       onClick={onPick}
       className={`flex flex-col items-center gap-1.5 rounded-2xl px-3 py-2 transition-transform duration-200 ${
-        selected ? 'scale-[1.05] bg-blush-50 ring-2 ring-rose-400' : 'hover:bg-cream-50'
+        selected ? 'scale-[1.05] bg-plum-700/80 ring-2 ring-gold-400/60' : 'hover:bg-plum-700/50'
       }`}
     >
-      <span className="h-9 w-9 rounded-full border border-cream-400/50 shadow-inner" style={style} />
-      <span className={`text-xs font-semibold ${selected ? 'text-rose-600' : 'text-cocoa-500'}`}>{name}</span>
+      <span
+        className="h-9 w-9 rounded-full border border-white/20 shadow-inner"
+        style={{ ...style, boxShadow: 'inset 0 1px 2px rgba(255,255,255,0.25), 0 2px 6px rgba(0,0,0,0.3)' }}
+      />
+      <span className={`text-xs font-semibold ${selected ? 'text-gold-300' : 'text-plum-200'}`}>{name}</span>
     </button>
   )
 }
 
 export default function CustomizePanel({ config, onChange }: CustomizePanelProps) {
   return (
-    <div className="space-y-6 rounded-3xl border border-cream-300/70 bg-white/70 p-6 shadow-soft backdrop-blur">
+    <div className="glass-chrome space-y-6 rounded-3xl p-6 shadow-lifted">
       <Section title="Wrapping Paper">
         {WRAPPING_OPTIONS.map((opt) => (
           <SwatchOption
@@ -72,10 +75,10 @@ export default function CustomizePanel({ config, onChange }: CustomizePanelProps
             key={opt.id}
             type="button"
             onClick={() => onChange({ arrangementStyle: opt.id })}
-            className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-transform duration-200 ${
+            className={`press rounded-full px-5 py-2.5 text-sm font-semibold transition-transform duration-200 ${
               config.arrangementStyle === opt.id
-                ? 'scale-[1.05] bg-rose-400 text-white shadow-soft ring-2 ring-rose-400'
-                : 'border border-cream-300 bg-white text-cocoa-600 hover:bg-cream-50'
+                ? 'scale-[1.05] bg-gold-400 text-plum-950 shadow-glow-gold'
+                : 'border border-white/10 bg-white/5 text-cream-100 hover:bg-white/10'
             }`}
           >
             {opt.name}
